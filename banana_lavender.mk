@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2019 The BananaOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,18 +8,24 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common BananaDroid stuff
+$(call inherit-product, vendor/banana/config/common.mk)
+
+BANANA_MAINTAINER := SenseiDEV
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_ENABLE_BLUR := false
+TARGET_EXCLUDE_MATLOG := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGER_SUPPORTS_NEXT_GEN_ASSISTANT := false
 
 # Inherit from lavender device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 $(call inherit-product, $(LOCAL_PATH)/device-hidl.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_lavender
+PRODUCT_NAME := banana_lavender
 PRODUCT_DEVICE := lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7
